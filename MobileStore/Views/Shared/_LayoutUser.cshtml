@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="HTML5,CSS3,Template" />
+    <meta name="description" content="" />
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="~/Content/User/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- LAYER SLIDER -->
+    <link href="~/Content/User/assets/plugins/slider.layerslider/css/layerslider.css" rel="stylesheet" type="text/css" />
+    <!-- THEME CSS -->
+    <link href="~/Content/User/assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <link href="~/Content/User/assets/css/header-1.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/layout-shop.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/User/assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    @RenderSection("head", false)
+</head>
+
+
+
+@*Start*@
+
+
+
+
+<body class="smoothscroll enable-animation">
+
+    <!-- SLIDE TOP -->
+    @*<div id="slidetop">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <h6><i class="icon-heart"></i> WHY SMARTY?</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas metus nulla, commodo a sodales sed, dignissim pretium nunc. Nam et lacus neque. Ut enim massa, sodales tempor convallis et, iaculis ac massa. </p>
+                </div>
+
+                <div class="col-md-4">
+                    <h6><i class="icon-attachment"></i> RECENTLY VISITED</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> This is a very long text, very very very very very very very very very very very very </a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Dolor sit amet,consectetur adipiscing elit amet</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i> Consectetur adipiscing elit amet,consectetur adipiscing elit</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h6><i class="icon-envelope"></i> CONTACT INFO</h6>
+                    <ul class="list-unstyled">
+                        <li><b>Address:</b> PO Box 21132, Here Weare St, <br /> Melbourne, Vivas 2355 Australia</li>
+                        <li><b>Phone:</b> 1-800-565-2390</li>
+                        <li><b>Email:</b> <a href="mailto:support@yourname.com">support@yourname.com</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <a class="slidetop-toggle" href="#"> toggle button </a>
+
+    </div>*@
+    <!-- /SLIDE TOP -->
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- Top Bar -->
+        <div id="topBar" class="dark">
+            <div class="container">
+
+                <!-- right -->
+                <ul class="top-links list-inline pull-right">
+                    <li class="text-welcome hidden-xs">Welcome to Smarty, <strong>John Doe</strong></li>
+                    
+                    <li class="hidden-xs"><a href="~/User/Login">LOGIN</a></li>
+                    <li class="hidden-xs"><a href="~/User/Registration">REGISTER</a></li>
+                </ul>
+
+                <!-- left -->
+               
+
+            </div>
+        </div>
+        <!-- /Top Bar -->
+        <!--
+            AVAILABLE HEADER CLASSES
+
+            Default nav height: 96px
+            .header-md 		= 70px nav height
+            .header-sm 		= 60px nav height
+
+            .noborder 		= remove bottom border (only with transparent use)
+            .transparent	= transparent header
+            .translucent	= translucent header
+            .sticky			= sticky header
+            .static			= static header
+            .dark			= dark header
+            .bottom			= header on bottom
+
+            shadow-before-1 = shadow 1 header top
+            shadow-after-1 	= shadow 1 header bottom
+            shadow-before-2 = shadow 2 header top
+            shadow-after-2 	= shadow 2 header bottom
+            shadow-before-3 = shadow 3 header top
+            shadow-after-3 	= shadow 3 header bottom
+
+            .clearfix		= required for mobile menu, do not remove!
+
+            Example Usage:  class="clearfix sticky header-sm transparent noborder"
+        -->
+        <div id="header" class="sticky clearfix">
+
+            <!-- SEARCH HEADER -->
+            <div class="search-box over-header">
+                <a id="closeSearch" href="#" class="glyphicon glyphicon-remove"></a>
+
+                <form action="page-search-result-1.html" method="get">
+                    <input type="text" class="form-control" placeholder="SEARCH" />
+                </form>
+            </div>
+            <!-- /SEARCH HEADER -->
+            <!-- TOP NAV -->
+            <header id="topNav">
+                <div class="container">
+
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- BUTTONS -->
+                    <ul class="pull-right nav nav-pills nav-second-main">
+
+                        <!-- SEARCH -->
+                        <li class="search">
+                            <a href="javascript:;">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <!-- /SEARCH -->
+                        <!-- QUICK SHOP CART -->
+                        <li class="quick-cart">
+                            <a href="#">
+                                <span class="badge badge-aqua btn-xs badge-corner">2</span>
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                            <div class="quick-cart-box">
+                                <h4>Shop Cart</h4>
+
+                                <div class="quick-cart-wrapper">
+
+                                    <a href="#">
+                                        <!-- cart item -->
+                                        <img src="~/Content/User/assets/images/demo/people/300x300/4-min.jpg" width="45" height="45" alt="" />
+                                        <h6><span>2x</span> RED BAG WITH HUGE POCKETS</h6>
+                                        <small>$37.21</small>
+                                    </a><!-- /cart item -->
+
+                                    <a href="#">
+                                        <!-- cart item -->
+                                        <img src="~/Content/User/assets/images/demo/people/300x300/5-min.jpg" width="45" height="45" alt="" />
+                                        <h6><span>2x</span> THIS IS A VERY LONG TEXT AND WILL BE TRUNCATED</h6>
+                                        <small>$17.18</small>
+                                    </a><!-- /cart item -->
+                                    <!-- cart no items example -->
+                                    <!--
+                                    <a class="text-center" href="#">
+                                        <h6>0 ITEMS ON YOUR CART</h6>
+                                    </a>
+                                    -->
+
+                                </div>
+
+                                <!-- quick cart footer -->
+                                <div class="quick-cart-footer clearfix">
+                                    <a href="shop-cart.html" class="btn btn-primary btn-xs pull-right">VIEW CART</a>
+                                    <span class="pull-left"><strong>TOTAL:</strong> $54.39</span>
+                                </div>
+                                <!-- /quick cart footer -->
+
+                            </div>
+                        </li>
+                        <!-- /QUICK SHOP CART -->
+
+                    </ul>
+                    <!-- /BUTTONS -->
+                    <!-- Logo -->
+                    <a class="logo pull-left" href="~/Home/Index">
+                        <img src="~/Content/User/assets/images/logo_dark.png" alt="" />
+                    </a>
+
+                    <!--
+                        Top Nav
+
+                        AVAILABLE CLASSES:
+                        submenu-dark = dark sub menu
+                    -->
+                    <div class="navbar-collapse pull-right nav-main-collapse collapse">
+                        <nav class="nav-main">
+
+                            <!--
+                                NOTE
+
+                                For a regular link, remove "dropdown" class from LI tag and "dropdown-toggle" class from the href.
+                                Direct Link Example:
+
+                                <li>
+                                    <a href="#">HOME</a>
+                                </li>
+                            -->
+                            <ul id="topMain" class="nav nav-pills nav-main">
+                                
+                               
+                                <li>
+                                    <a href="~/Home/Index/">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="~/Home/Index/">ABOUT</a>
+                                </li>
+                                <li>
+                                    <a href="~/Home/Index/">CONTACT</a>
+                                </li>
+                                
+                                
+                                
+                                
+                 
+                            </ul>
+
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+            <!-- /Top Nav -->
+
+        </div>
+
+
+
+
+
+
+        <!-- SLIDER -->
+        
+        <!-- /SLIDER -->
+
+
+
+        <!-- LAYER SLIDER -->
+        <!-- /LAYER SLIDER -->
+
+
+
+
+
+        <!-- FEATURED -->
+        <section class="nopadding-bottom">
+
+            @RenderBody()
+            
+        </section>
+        <!-- /FEATURED -->
+        <!-- NEW PRODUCTS -->
+        <section class="nopadding-bottom">
+            
+        </section>
+        <!-- NEW PRODUCTS -->
+        <!-- BRANDS -->
+        <section class="padding-xxs">
+        </section>
+        <!-- BRANDS -->
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="container">
+
+                <div class="row margin-top-60 margin-bottom-40 size-13">
+
+                    <!-- col #1 -->
+                    <div class="col-md-4 col-sm-4">
+
+                        <!-- Footer Logo -->
+                        <img class="footer-logo" src="~/Content/User/assets/images/logo-footer.png" alt="" />
+
+                        <p>
+                            Incredibly beautiful responsive Bootstrap Template for Corporate and Creative Professionals.
+                        </p>
+
+                        <h2>(800) 123-4567</h2>
+
+                        <!-- Social Icons -->
+                        <div class="clearfix">
+
+                            <a href="#" class="social-icon social-icon-sm social-icon-border social-facebook pull-left" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="#" class="social-icon social-icon-sm social-icon-border social-twitter pull-left" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="#" class="social-icon social-icon-sm social-icon-border social-gplus pull-left" data-toggle="tooltip" data-placement="top" title="Google plus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i>
+                            </a>
+
+                            <a href="#" class="social-icon social-icon-sm social-icon-border social-linkedin pull-left" data-toggle="tooltip" data-placement="top" title="Linkedin">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+
+                            <a href="#" class="social-icon social-icon-sm social-icon-border social-rss pull-left" data-toggle="tooltip" data-placement="top" title="Rss">
+                                <i class="icon-rss"></i>
+                                <i class="icon-rss"></i>
+                            </a>
+
+                        </div>
+                        <!-- /Social Icons -->
+
+                    </div>
+                    <!-- /col #1 -->
+                    <!-- col #2 -->
+                    <div class="col-md-8 col-sm-8">
+
+                        <div class="row">
+
+                            <div class="col-md-5 hidden-sm hidden-xs">
+                                <h4 class="letter-spacing-1">RECENT NEWS</h4>
+                                <ul class="list-unstyled footer-list half-paddings">
+                                    <li>
+                                        <a class="block" href="#">New CSS3 Transitions this Year</a>
+                                        <small>June 29, 2015</small>
+                                    </li>
+                                    <li>
+                                        <a class="block" href="#">Inteligent Transitions In UX Design</a>
+                                        <small>June 29, 2015</small>
+                                    </li>
+                                    <li>
+                                        <a class="block" href="#">Lorem Ipsum Dolor</a>
+                                        <small>June 29, 2015</small>
+                                    </li>
+                                    <li>
+                                        <a class="block" href="#">New CSS3 Transitions this Year</a>
+                                        <small>June 29, 2015</small>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-3 hidden-sm hidden-xs">
+                                <h4 class="letter-spacing-1">EXPLORE US</h4>
+                                <ul class="list-unstyled footer-list half-paddings noborder">
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> About Us</a></li>
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> About Me</a></li>
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> About Our Team</a></li>
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> Services</a></li>
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> Careers</a></li>
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> Gallery</a></li>
+                                    <li><a class="block" href="#"><i class="fa fa-angle-right"></i> FAQ</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-4">
+                                <h4 class="letter-spacing-1">SECURE PAYMENT</h4>
+                                <p>Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet.</p>
+                                <p>
+                                    <!-- see ~/Content/User/assets/images/cc/ for more icons -->
+                                    <img src="~/Content/User/assets/images/cc/Visa.png" alt="" />
+                                    <img src="~/Content/User/assets/images/cc/Mastercard.png" alt="" />
+                                    <img src="~/Content/User/assets/images/cc/Maestro.png" alt="" />
+                                    <img src="~/Content/User/assets/images/cc/PayPal.png" alt="" />
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /col #2 -->
+
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    <ul class="pull-right nomargin list-inline mobile-block">
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li>&bull;</li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+
+                    &copy; All Rights Reserved, Company LTD
+                </div>
+            </div>
+
+        </footer>
+        <!-- /FOOTER -->
+        <!--
+            HOME SHOP - MODAL ON LOAD
+
+            data-autoload="true" 			- load modal on page load
+            data-autoload-delay="2000"		- load after 2000 ms (1000ms = 1s)
+        -->
+        <div id="shopLoadModal" class="modal fade" data-autoload="false" data-autoload-delay="2000">
+            <div class="modal-dialog modal-full">
+                <div class="modal-content" style="background-image:url('~/Content/User/assets/images/misc/shop/shop_modal.jpg');">
+
+                    <!-- header modal -->
+                    <div class="modal-header noborder">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+
+                    <!-- body modal -->
+                    <div class="modal-body">
+
+                        <div class="block-content">
+
+                            <img src="~/Content/User/assets/images/logo-footer-dark.png" alt="" />
+                            <p class="size-13 margin-bottom-20 margin-top-30">Subscribe to the Smarty newsletter to get all new products and all new discounts.</p>
+
+                            <!-- newsletter -->
+                            <div class="inline-search clearfix margin-bottom-20">
+                                <form action="php/newsletter.php" method="post" class="validate nomargin" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right" novalidate="novalidate">
+
+                                    <input type="search" placeholder="Email Address" id="shop_email" name="shop_email" class="serch-input required">
+                                    <button type="submit">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <!-- /newsletter -->
+                            <!-- Don't show this popup again -->
+                            <div class="size-11 text-left">
+                                <label class="checkbox pull-left">
+                                    <input class="loadModalHide" type="checkbox" />
+                                    <i></i> <span class="weight-300">Don't show this popup again</span>
+                                </label>
+
+                            </div>
+                            <!-- /Don't show this popup again -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /HOME SHOP - MODAL ON LOAD -->
+
+
+
+    </div>
+    <!-- /wrapper -->
+    <!-- SCROLL TO TOP -->
+    <a href="#" id="toTop"></a>
+
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="inner">
+            <span class="loader"></span>
+        </div>
+    </div><!-- /PRELOADER -->
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = '/Content/User/assets/plugins/';</script>
+    <script type="text/javascript" src="~/Content/User/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/User/assets/js/scripts.js"></script>
+
+    <!-- LAYER SLIDER -->
+    <script type="text/javascript" src="~/Content/User/assets/plugins/slider.layerslider/js/layerslider_pack.js"></script>
+    <script type="text/javascript" src="~/Content/User/assets/js/view/demo.layerslider_slider.js"></script>
+
+
+    <!-- STYLESWITCHER - REMOVE -->
+    @*<script async type="text/javascript" src="~/Content/User/assets/plugins/styleswitcher/styleswitcher.js"></script>*@
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script type="text/javascript" src="~/Content/User/assets/js/view/demo.shop.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*End*@
+
+
+
+
+
+
+</html>

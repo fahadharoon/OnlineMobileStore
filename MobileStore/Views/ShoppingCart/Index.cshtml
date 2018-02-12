@@ -1,0 +1,213 @@
+﻿
+@model MobileStore.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";}
+<script src="/Scripts/jquery-1.4.4.min.js"
+        type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        // Document.ready -> link up remove event handler
+        $(".RemoveLink").click(function () {
+            // Get the id from the link
+            var recordToDelete = $(this).attr("data-id");
+            if (recordToDelete != '') {
+                // Perform the ajax post
+                $.post("/ShoppingCart/RemoveFromCart", {"id": recordToDelete },
+                    function (data) {
+                        // Successful requests get here
+                        // Update the page elements
+                        if (data.ItemCount == 0) {
+                            $('#row-' + data.DeleteId).fadeOut('slow');
+                        } else {
+                            $('#item-count-' + data.DeleteId).text(data.ItemCount);
+                        }
+                        $('#cart-total').text(data.CartTotal);
+                        $('#update-message').text(data.Message);
+                        $('#cart-status').text('Cart (' + data.CartCount + ')');
+                    });
+            }
+        });
+    });
+</script>
+@*<h3>
+    <em>Review</em> your cart:
+</h3>
+<p class="button">
+    @Html.ActionLink("Checkout>> ", "AddressAndPayment", "Checkout")
+</p>
+<div id="update-message">
+</div>
+<table>
+    <tr>
+        <th>
+            Image
+        </th>
+        <th>
+            Item Name
+        </th>
+        <th>
+            Price (each)
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CartItems)
+    {
+        <tr id="row-@item.RecordId">
+            <td>
+                @Html.ActionLink(item.Product.Title, "DetailsForUserProduct", "Product", new { id = item.ProductId }, null)
+
+
+            </td>
+            <td>
+                @item.Product.Price
+            </td>
+            <td id="item-count-@item.RecordId">
+                @item.Count
+            </td>
+            <img src="~/Content/Upload/ProductImages/@item.Product.ImageUrl"width="30" height="30" />
+            <td>
+                <a href="#" class="RemoveLink"
+                   data-id="@item.RecordId">
+                    Remove
+                    from cart
+                </a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            Total
+        </td>
+        <td></td>
+        <td></td>
+        <td id="cart-total">
+            @Model.CartTotal
+        </td>
+    </tr>
+</table>*@
+
+
+
+<section class="page-header page-header-xs">
+    <div class="container">
+
+        <h1>SHOP CART</h1>
+
+        <!-- breadcrumbs -->
+        <ol class="breadcrumb">
+            <li><a href="~/Home/Index">Home</a></li>
+            <li><a href="~/ShoppingCart/Index">Shop</a></li>
+            <li class="active">Shop Cart</li>
+        </ol><!-- /breadcrumbs -->
+
+    </div>
+</section>
+<!-- /PAGE HEADER -->
+<!-- CART -->
+<section>
+    <div class="container">
+
+
+        
+        <!-- CART -->
+        <div class="row">
+
+            <!-- LEFT -->
+            <div class="col-lg-9 col-sm-8">
+
+                <!-- CART -->
+                <form class="cartContent clearfix" method="post" action="#">
+
+                    <!-- cart content -->
+                    <div id="cartContent">
+                        <!-- cart header -->
+                        <div class="item head clearfix">
+                            <span class="cart_img"></span>
+                            <span class="product_name size-13 bold">PRODUCT NAME</span>
+                            <span class="remove_item size-13 bold"></span>
+                            <span class="total_price size-13 bold">TOTAL</span>
+                            <span class="qty size-13 bold">QUANTITY</span>
+                        </div>
+                        <!-- /cart header -->
+                        <!-- cart item -->
+                        <div class="item">
+                            @foreach (var item in Model.CartItems)
+                            {
+                            <div class="cart_img pull-left width-100 padding-10 text-left"><img src="~/Content/Upload/ProductImages/@item.Product.ImageUrl" alt="" width="80" /></div>
+                            <a href="~/Product/DetailsForUserProduct/@item.ProductId" class="product_name">
+                                <span>@item.Product.Title</span>
+                                <small>@item.Product.Brand.BrandName</small>
+                                <small>@item.Product.Category.CategoryName</small>
+
+                            </a>
+                            <a href="#" class="remove_item"><i class="fa fa-times"></i></a>
+                            <div class="total_price">$<span>@(item.Product.Price*item.Count)</span></div>
+                            <div class="qty" id="item-count-@item.RecordId">@item.Count&times;@item.Product.Price </div>
+                            <div class="clearfix"></div>
+                            }
+                        </div>
+                        <!-- /cart item -->
+                     
+                        <!-- update cart -->
+                        <button class="btn btn-success margin-top-20 margin-right-10 pull-right"><i class="glyphicon glyphicon-ok"></i> UPDATE CART</button>
+                        <button class="btn btn-danger margin-top-20 margin-right-10 pull-right"><i class="glyphicon glyphicon-remove"></i> CLEAR CART</button>
+                        <!-- /update cart -->
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- /cart content -->
+
+                </form>
+                <!-- /CART -->
+
+            </div>
+
+
+            <!-- RIGHT -->
+            <div class="col-lg-3 col-sm-4">
+
+                
+
+                <div class="toggle-transparent toggle-bordered-full clearfix">
+                    <div class="toggle active">
+                        <div class="toggle-content">
+
+                            @*<span class="clearfix">
+                                <span class="pull-right">$120.75</span>
+                                <strong class="pull-left">Subtotal:</strong>
+                            </span>
+                            <span class="clearfix">
+                                <span class="pull-right">$0.00</span>
+                                <span class="pull-left">Discount:</span>
+                            </span>
+                            <span class="clearfix">
+                                <span class="pull-right">$0.00</span>
+                                <span class="pull-left">Shipping:</span>
+                            </span>*@
+
+                            <hr />
+
+                            <span class="clearfix">
+                                <span class="pull-right size-20">$@Model.CartTotal</span>
+                                <strong class="pull-left">TOTAL:</strong>
+                            </span>
+
+                            <hr />
+
+                            <a href="shop-checkout.html" class="btn btn-primary btn-lg btn-block size-15"><i class="fa fa-mail-forward"></i> Proceed to Checkout</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /CART -->
+
+    </div>
+</section>
+<!-- /CART -->

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MobileStore.Models.Product>
+
+@{
+    ViewBag.Title = "Brand";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- LEFT -->
+        <div class="col-lg-3">
+
+            <!-- CATEGORIES -->
+            <div class="side-nav margin-bottom-60">
+
+
+                @{Html.RenderAction("ProductCategory", "Category");}
+
+
+                <ul class="list-group list-group-bordered list-group-noicon uppercase">
+
+
+                    <li class="list-group-item">
+
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+            <!-- /CATEGORIES -->
+
+            <div class="side-nav margin-bottom-60">
+
+                @{Html.RenderAction("ProductBrand", "Brand");}
+
+
+            </div>
+
+
+
+        </div>
+        <!-- /LEFT -->
+        <!-- RIGHT -->
+
+
+        <div class="col-lg-9">
+            <ul class="shop-item-list row list-inline nomargin">
+
+                <!-- ITEM -->
+                @foreach (var item in Model)
+            {
+
+                    <li class="col-sm-3">
+
+                        <div class="shop-item">
+
+                            <div class="thumbnail">
+                                <!-- product image(s) -->
+                                <a class="shop-item-image" href="/Product/DetailsForUserProduct/@item.ProductId">
+                                    <img class="img-responsive" src="~/Content/Upload/ProductImages/@item.ImageUrl" alt="shop first image" />
+                                    <img class="img-responsive" src="~/Content/Upload/ProductImages/@item.ImageUrl" alt="shop hover image" />
+                                </a>
+                                <!-- /product image(s) -->
+                                <!-- hover buttons -->
+                                <div class="shop-option-over">
+                                    <!-- replace data-item-id width the real item ID - used by js/view/demo.shop.js -->
+                                    <a class="btn btn-default" href="@Url.Action("AddToCart","ShoppingCart", new { id = item.ProductId })"><i class="fa fa-cart-plus size-20"></i></a>
+                                    <a class="btn btn-default" href="/Product/DetailsForUserProduct/@item.ProductId"><i class="fa fa-list"></i></a>
+
+                                </div>
+                                <!-- /hover buttons -->
+                                <!-- product more info -->
+                                <div class="shop-item-info">
+                                    <span class="label label-success">NEW</span>
+                                    <span class="label label-danger">SALE</span>
+                                </div>
+                                <!-- /product more info -->
+                            </div>
+
+                            <div class="shop-item-summary text-center">
+                                <h2>@item.Title</h2>
+
+                                <!-- rating -->
+                                <div class="shop-item-rating-line">
+                                    <div class="rating rating-4 size-11"><!-- rating-0 ... rating-5 --></div>
+                                </div>
+                                <!-- /rating -->
+                                <!-- price -->
+                                <div class="shop-item-price">
+                                    <span><b>$@item.Price</b></span>
+
+                                </div>
+                                <!-- /price -->
+                            </div>
+
+                        </div>
+
+                    </li>
+
+    <!-- /ITEM -->
+                }
+            </ul>
+        </div>
+
+        <!-- /RIGHT -->
+    </div>
+</div>

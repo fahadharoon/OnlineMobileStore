@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
+
+}
+
+
+
+
+
+
+
+
+
+ <!-- SLIDER -->
+
+<section class="padding-top-10">
+
+
+    @{Html.RenderAction("Slider", "Home"); }
+    </section>
+
+<!-- /SLIDER -->
+
+
+
+
+<!-- FEATURED -->
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-9 col-sm-push-3">
+
+            <h1 class="size-17 margin-bottom-20">FEATURED PRODUCTS</h1>
+
+            @{Html.RenderAction("FeaturedProduct", "Product");}
+
+
+
+
+        </div>
+
+        <div class="col-sm-3 col-sm-pull-9">
+
+            <!-- CATEGORIES -->
+            <div class="side-nav margin-bottom-60">
+
+               @{Html.RenderAction("ProductCategory", "Category");}
+            </div>
+            <!-- /CATEGORIES -->
+            <!-- BRANDS -->
+            <div class="side-nav margin-bottom-60">
+
+                @{Html.RenderAction("ProductBrand", "Brand");}
+
+
+            </div>
+            <!-- BRANDS -->
+            <!-- BANNER ROTATOR -->
+            <div class="owl-carousel buttons-autohide controlls-over margin-bottom-60 text-center" data-plugin-options='{"singleItem": true, "autoPlay": 4000, "navigation": true, "pagination": false, "transitionStyle":"goDown"}'>
+                <a href="#">
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/shop/banners/off_1.png" width="270" height="350" alt="">
+                </a>
+                <a href="#">
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/shop/banners/off_2.png" width="270" height="350" alt="">
+                </a>
+            </div>
+            <!-- /BANNER ROTATOR -->
+            <!-- FREE RETURNS -->
+            <div class="margin-bottom-60">
+                <h4>FREE RETURNS</h4>
+                <p class="nomargin">We stand behind our goods and services and want you to be satisfied with them.</p>
+                <a href="#">Returns Policy &raquo;</a>
+            </div>
+            <!-- /FREE RETURNS -->
+
+        </div>
+
+    </div>
+
+</div>
+<!-- /FEATURED -->
+
+
+
+
+        <!-- NEW PRODUCTS -->
+
+<div class="container">
+
+    <h2 class="owl-featured noborder"><strong>NEW</strong> PRODUCTS</h2>
+
+    
+    @{Html.RenderAction("NewProduct", "Product");}
+
+    </div>
+
+
+    <!-- /NEW PRODUCTS -->
+    <!-- Brands -->
+    <div class="container">
+
+        <!--
+            controlls-over		= navigation buttons over the image
+            buttons-autohide 	= navigation buttons visible on mouse hover only
+
+            data-plugin-options:
+                "singleItem": true
+                "autoPlay": true (or ms. eg: 4000)
+                "navigation": true
+                "pagination": true
+        -->
+        <div class="text-center">
+            <div class="owl-carousel nomargin" data-plugin-options='{"singleItem": false, "autoPlay": 3000}'>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/1.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/2.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/3.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/4.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/5.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/6.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/7.jpg" alt="">
+                </div>
+                <div>
+                    <img class="img-responsive" src="~/Content/User/assets/images/demo/brands/8.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Brands -->

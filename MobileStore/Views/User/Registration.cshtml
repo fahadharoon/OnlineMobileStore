@@ -1,0 +1,229 @@
+﻿@model MobileStore.Models.Users
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+
+}
+
+@*<h2>Registration</h2>
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            <strong>Success!</strong>@ViewBag.Message
+        </div>
+    }
+}
+else
+{
+    using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, "password", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ConfirmPassword, "password", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.roleId, "Select User", htmlAttributes: new { @class = "control-label col-sm-5", @style = "color: white" })
+                <div class="col-md-10">
+                    @Html.DropDownList("roleId", new SelectList(ViewBag.tblroles, "roleId", "rolename"), "Select Roles", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.roleId, "", new { @class = "text-danger" })
+                    <br />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        if (ViewBag.Message != null)
+        {
+            <div class="alert alert-danger">
+                <strong>Error!</strong>@ViewBag.Message
+            </div>
+        }
+
+    }
+
+}
+
+<div>
+    @Html.ActionLink("Login", "Login")
+</div>*@
+
+
+
+
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            <strong>Success!</strong>@ViewBag.Message
+        </div>
+    }
+}
+else
+{
+    <div class="header-w3l">
+        <h1>
+            <span>M</span>OBILE
+            <span>S</span>TORE
+        </h1>
+    </div>
+    <!--//header-->
+        <div class="main-content-agile">
+            <div class="sub-main-w3">
+
+                <div class="header-w3l">
+                    <h1 style="font-size:35px;">
+                        <span>R</span>egistration
+
+                    </h1>
+                </div>
+                @using (Html.BeginForm())
+                {
+
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserName,"User Name", htmlAttributes: new { @class = "control-label col-sm-4 ", @style = "color: white" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control pom-agile ", @placeholder = "Name" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserEmail, "Email", htmlAttributes: new { @class = "control-label col-sm-3 ", @style = "color: white" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control pom-agile ", @placeholder = "E-mail" } })
+                            @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-sm-4 ", @style = "color: white" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, "password", new { htmlAttributes = new { @class = "form-control pom-agile", @placeholder = "Password" } })
+
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger " })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ConfirmPassword, "Confirm Password", htmlAttributes: new { @class = "control-label col-sm-6", @style = "color: white" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ConfirmPassword, "password", new { htmlAttributes = new { @class = "form-control pom-agile", @placeholder = "Confirm Password" } })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.roleId, "Select User", htmlAttributes: new { @class = "control-label col-sm-4", @style = "color: white" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("roleId", new SelectList(ViewBag.tblroles, "roleId", "rolename"), "Select Roles", htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.roleId, "", new { @class = "text-danger" })
+                            <br />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10 right-w3l">
+                            <input type="submit" value="Create" />
+                            <a href="~/User/Login" class="btn btn-primary">Login</a>
+
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <p>
+                            <br /><br /><br />
+                            <br /><br /><br />
+                            <br /><br /><br />
+                            <br /><br /><br />
+                            <br /><br /><br />
+                            <br /><br /><br />
+                            <br /><br /><br />
+
+                        </p>
+
+                    </div>
+                }
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Error!</strong>@ViewBag.Message
+        </div>
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

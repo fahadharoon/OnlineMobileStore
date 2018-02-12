@@ -1,0 +1,248 @@
+﻿<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Mobile Store</title>
+    <meta name="description" content="" />
+    <meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- WEB FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="~/Content/Admin/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="~/Content/Admin/assets/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Admin/assets/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Admin/assets/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+          rel="stylesheet" type="text/css" />
+</head>
+<!--
+    .boxed = boxed version
+-->
+<body>
+
+
+    <!-- WRAPPER -->
+    <div id="wrapper">
+
+        <!--
+            ASIDE
+            Keep it outside of #wrapper (responsive purpose)
+        -->
+        <aside id="aside">
+            <!--
+                Always open:
+                <li class="active alays-open">
+
+                LABELS:
+                    <span class="label label-danger pull-right">1</span>
+                    <span class="label label-default pull-right">1</span>
+                    <span class="label label-warning pull-right">1</span>
+                    <span class="label label-success pull-right">1</span>
+                    <span class="label label-info pull-right">1</span>
+            -->
+            <nav id="sideNav">
+                <!-- MAIN MENU -->
+                <ul class="nav nav-list">
+                    <li>
+                        <!-- dashboard -->
+                        <a class="dashboard" href="~/Admin/Index">
+                            <!-- warning - url used by default by ajax (if eneabled) -->
+                            <i class="main-icon fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-list"></i> <span>Categories</span>
+                        </a>
+                        <ul>
+                            <!-- submenus -->
+                            <li><a href="~/Category/Index">Category List</a></li>
+                            <li><a href="~/Category/Create">Add New</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-table"></i> <span>Brands</span>
+                        </a>
+                        <ul>
+                            <!-- submenus -->
+                            <li><a href="~/Brand/Index">Brand List</a></li>
+                            <li><a href="~/Brand/Create">Add New</a></li>                            
+                                </ul>
+                            </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-shopping-cart"></i> <span>Products</span>
+                        </a>
+                        <ul>
+                            <!-- submenus -->
+                            <li><a href="~/Product/Index">Product List</a></li>
+                            <li><a href="~/Product/Create">Add New</a></li>
+                            @*<li><a href="graphs-inline.html">Inline Charts</a></li>
+                <li><a href="graphs-chartjs.html">Chart.js</a></li>*@
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="~/roles/Index">
+                            <i class="main-icon fa fa-link"></i>
+                            <span>Roles</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/User/Login">
+                            <i class="main-icon fa fa-sign-in"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                        </ul>
+                   
+                    
+                        @*<a href="#">
+                            <i class="fa fa-menu-arrow pull-right"></i>
+                            <i class="main-icon fa fa-pencil-square-o"></i> <span>Forms</span>
+                        </a>
+                        <ul>
+                             submenus 
+                            <li><a href="form-elements.html">Smarty Elements</a></li>
+                            <li><a href="form-masked-inputs.html">Masked Inputs</a></li>
+                            <li><a href="form-pickers.html">Pickers</a></li>
+                            <li><a href="form-ui-sliders.html">UI Sliders</a></li>
+                            <li><a href="form-validation.html">Validation Form</a></li>
+                            <li><a href="form-html-editors.html">Html Editors</a></li>
+                            <li><a href="form-autosuggest.html">Autosuggest</a></li>
+                            <li><a href="form-x-editable.html">Form X-Editable</a></li>
+                            <li><a href="form-dropzone.html">Dropzone File Upload</a></li>
+                        </ul>*@
+                    
+                       
+                    
+               
+
+                <!-- SECOND MAIN LIST -->
+
+                
+
+            <span id="asidebg"><!-- aside fixed background --></span>
+        </aside>
+        <!-- /ASIDE -->
+        <!-- HEADER -->
+        <header id="header">
+
+            <!-- Mobile Button -->
+            <button id="mobileMenuBtn"></button>
+
+            <!-- Logo -->
+            <span class="logo pull-left">
+                <img src="~/Content/Admin/assets/images/logo_light.png" alt="admin panel" height="35" />
+            </span>
+
+            <form method="get" action="page-search.html" class="search pull-left hidden-xs">
+                <input type="text" class="form-control" name="k" placeholder="Search for something..." />
+            </form>
+
+            <nav>
+
+                <!-- OPTIONS LIST -->
+                <ul class="nav pull-right">
+
+                    <!-- USER OPTIONS -->
+                    <li class="dropdown pull-left">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img class="user-avatar" alt="" src="~/Content/Admin/assets/images/noavatar.jpg" height="34" />
+                            <span class="user-name">
+                                <span class="hidden-xs">
+                                    John Doe <i class="fa fa-angle-down"></i>
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu hold-on-click">
+                            <li>
+                                <!-- my calendar -->
+                                <a href="calendar.html"><i class="fa fa-calendar"></i> Calendar</a>
+                            </li>
+                            <li>
+                                <!-- my inbox -->
+                                <a href="#">
+                                    <i class="fa fa-envelope"></i> Inbox
+                                    <span class="pull-right label label-default">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <!-- settings -->
+                                <a href="page-user-profile.html"><i class="fa fa-cogs"></i> Settings</a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <!-- lockscreen -->
+                                <a href="page-lock.html"><i class="fa fa-lock"></i> Lock Screen</a>
+                            </li>
+                            <li>
+                                <!-- logout -->
+                                <a href="page-login.html"><i class="fa fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /USER OPTIONS -->
+
+                </ul>
+                <!-- /OPTIONS LIST -->
+
+            </nav>
+
+        </header>
+        <!-- /HEADER -->
+        <!--
+            MIDDLE
+        -->
+        <section id="middle">
+
+
+            <!-- page title -->
+            <header id="page-header">
+                <h1>@ViewBag.Title</h1>
+
+            </header>
+            <!-- /page title -->
+
+
+            <div id="content" class="padding-20">
+
+                @RenderBody()
+
+            </div>
+        </section>
+        <!-- /MIDDLE -->
+
+    </div>
+
+
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript">var plugin_path = '/Content/Admin/assets/plugins/';</script>
+    <script type="text/javascript" src="~/Content/Admin/assets/plugins/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="~/Content/Admin/assets/js/app.js"></script>
+
+</body>
+</html>
+
+

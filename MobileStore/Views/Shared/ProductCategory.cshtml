@@ -1,0 +1,24 @@
+﻿@model List<MobileStore.Models.Category>
+
+
+<div class="side-nav-head">
+    <button class="fa fa-bars"></button>
+    <h4>CATEGORIES</h4>
+</div>
+
+<ul class="list-group list-group-bordered list-group-noicon uppercase" >
+    @foreach (var category in Model)
+    {
+    <li class="list-group-item ">
+        <a  href="@Url.Action("Category","Product", new {id = category.CategoryId})">@category.CategoryName</a>
+        @*<ul>
+            <li><a href="#"><span class="size-11 text-muted pull-right">(123)</span> Shoes &amp; Boots</a></li>
+            <li class="active"><a href="#"><span class="size-11 text-muted pull-right">(331)</span> Top &amp; Blouses</a></li>
+            <li><a href="#"><span class="size-11 text-muted pull-right">(234)</span> Dresses &amp; Skirts</a></li>
+        </ul>*@
+    </li>
+    }
+    @*<li class="list-group-item"><a href="#"><span class="size-11 text-muted pull-right">(189)</span> ACCESSORIES</a></li>
+    <li class="list-group-item"><a href="#"><span class="size-11 text-muted pull-right">(61)</span> GLASSES</a></li>*@
+
+</ul>

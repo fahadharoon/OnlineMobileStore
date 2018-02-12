@@ -1,0 +1,16 @@
+﻿
+
+@model List<MobileStore.Models.Brand>
+
+
+<div class="side-nav-head">
+    <button class="fa fa-bars"></button>
+    <h4>BRANDS</h4>
+</div>
+
+<ul class="list-group list-unstyled uppercase">
+    @foreach (var brand in Model)
+    {
+    <li class="list-group-item"><a href="@Url.Action("Brand","Product",new { id = brand.BrandId })"> @brand.BrandName</a></li>
+    }
+</ul>

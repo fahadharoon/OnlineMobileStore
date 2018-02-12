@@ -1,0 +1,190 @@
+﻿@*@model RegistrationAndLogin.Models.UserLogin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RememberMe)
+                    @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Register Now", "Registration","User")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+
+
+@model MobileStore.Models.UserLogin
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@*<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RememberMe)
+                    @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Register Now", "Registration", "User")
+</div>*@
+
+
+
+<!--header-->
+<div class="header-w3l">
+    <h1>
+        <span>M</span>OBILE
+        <span>S</span>TORE
+
+    </h1>
+</div>
+<!--//header-->
+<div class="main-content-agile">
+    <div class="sub-main-w3">
+
+        <div class="header-w3l">
+            <h1 style="font-size:40px;">
+                <span>L</span>ogin
+
+            </h1>
+
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger  " })
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserEmail, "Email", htmlAttributes: new { @class = "control-label col-sm-3 header-w3l ", @style = "color:white" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control pom-agile ", @placeholder = "E-mail" } })
+                    @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-sm-4 ", @style = "color: white" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, "password", new { htmlAttributes = new { @class = "form-control pom-agile", @placeholder = "Password" } })
+
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger " })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-sm-5 ", @style = "color: white" })
+                <center>
+                    <div class="checkbox ">
+                        @Html.EditorFor(model => model.RememberMe)
+                        @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                    </div>
+                </center>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 right-w3l">
+                        <input type="submit" value="Login" />
+                        <a href="~/User/Registration" class="btn btn-primary">Registration</a>
+
+                    </div>
+
+                </div>
+                <div class="footer">
+                    <p>
+                        <br /><br /><br />
+                        <br /><br /><br />
+                        <br /><br /><br />
+                        <br /><br /><br />
+
+
+                    </p>
+
+                </div>
+                </div>
+                
+                }
+                </div>
+                </div>
+               
+
+
+

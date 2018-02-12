@@ -1,0 +1,27 @@
+﻿@model MobileStore.Models.tblroles
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblroles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rolename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rolename)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.roleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

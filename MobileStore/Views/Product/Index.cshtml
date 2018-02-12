@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MobileStore.Models.Product>
+
+@{
+    ViewBag.Title = "Product List";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<p>
+    <a href="/Product/Create/" class="btn btn-3d btn-black"><i class="fa fa-pencil-square-o"></i>Add Product</a>
+</p>
+<table class="table ">
+    <tr>
+        <th>Image</th>
+        <th>Brand</th>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Avaliable</th>
+        <th>Sold</th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p><img src="~/Content/Upload/ProductImages/@item.ImageUrl" width="100" /></p>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand.BrandName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+           $ @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoldProduct)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+@*<p>
+        <a href="/News/Create/" class="btn btn-3d btn-black"><i class="fa fa-pencil-square-o"></i>Add News</a>
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered nomargin">
+            <thead>
+                <tr>
+                     <th>Image</th>
+                     <th>Brand</th>
+                     <th>Category</th>
+                     <th>Title</th>
+                     <th>Price</th>
+                     <th>Avaliable</th>
+                     <th>Sold</th>
+                     <th>Actions</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td><img src="~/Content/Upload/ProductImages/@item.ImageUrl" width="150" /></td>
+                        <td>@item.Brand</td>
+                        <td>@item.Category</td>
+                        <td>@item.Title</td>
+                        <td>@item.Price</td>
+
+                        <td>@item.AvailableProduct</td>
+                        <td>@item.SoldProduct</td>
+
+
+
+                        <td><span class="label label-info">@item.Brand.BrandName </span></td>
+                        <td><span class="label label-info">@item.Category.CategoryName </span></td>
+
+
+                        <td>
+                            <a href="/Product/Edit/@item.ProductId" class="btn btn-default btn-xs"><i class="fa fa-edit white"></i> Edit </a>
+                            <a href="/Product/Delete/@item.ProductId" class="btn btn-default btn-xs"><i class="fa fa-times white"></i> Delete </a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+
+    </div>*@
